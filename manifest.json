@@ -1,20 +1,17 @@
 {
   "manifest_version": 3,
   "name": "IRCTC LAK AUTO",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Save your details and autofill forms on websites.",
-
   "permissions": ["storage", "activeTab", "scripting"],
-
   "host_permissions": [
-    "https://lakshadweep.irctc.co.in/*"
+    "https://lakshadweep.irctc.co.in/*",
+    "http://localhost:3000/*"
   ],
-
   "action": {
     "default_popup": "popup.html",
     "default_title": "Autofill Assistant"
   },
-
   "content_scripts": [
     {
       "matches": ["https://lakshadweep.irctc.co.in/*"],
