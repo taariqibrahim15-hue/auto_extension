@@ -1,85 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autofill Assistant</title>
-  <link rel="stylesheet" href="popup.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Autofill Assistant</h1>
-    
-    <p class="info">Save your travel details below. The form will auto-fill automatically when you visit the website.</p>
-
-    <label>From Destination</label>
-    <select id="fromDestination">
-      <option value="">Select From</option>
-      <option value="1001">Kochi</option>
-      <option value="1002">Beypore</option>
-      <option value="1003">Mangalore</option>
-      <option value="1004">Androth</option>
-      <option value="1005">Kalpeni</option>
-      <option value="1006">Agatti</option>
-      <option value="1007">Kavaratti</option>
-      <option value="1008">Bangaram</option>
-      <option value="1009">Minicoy</option>
-      <option value="1010">Amini</option>
-      <option value="1011">Kadmat</option>
-      <option value="1012">Kiltan</option>
-      <option value="1013">Chettlat</option>
-      <option value="1014">Bitra</option>
-    </select>
-
-    <label>To Destination</label>
-    <select id="toDestination">
-      <option value="">Select To</option>
-      <option value="1001">Kochi</option>
-      <option value="1002">Beypore</option>
-      <option value="1003">Mangalore</option>
-      <option value="1004">Androth</option>
-      <option value="1005">Kalpeni</option>
-      <option value="1006">Agatti</option>
-      <option value="1007">Kavaratti</option>
-      <option value="1008">Bangaram</option>
-      <option value="1009">Minicoy</option>
-      <option value="1010">Amini</option>
-      <option value="1011">Kadmat</option>
-      <option value="1012">Kiltan</option>
-      <option value="1013">Chettlat</option>
-      <option value="1014">Bitra</option>
-    </select>
-
-    <label>Travel Class</label>
-    <select id="travelClass">
-      <option value="">Select Class</option>
-      <option value="SECOND CLASS">SECOND CLASS</option>
-      <option value="BUNK CLASS">BUNK CLASS</option>
-      <option value="FIRST CLASS">FIRST CLASS</option>
-    </select>
-
-    <label>Date</label>
-    <input type="date" id="travelDate" />
-
-    <h3>Passengers</h3>
-   <div id="passengerList"></div>
-
-<div class="seat-monitor-row">
-  <span class="seat-label">Seat Monitor</span>
-  
-  <label class="switch">
-    <input type="checkbox" id="seatMonitorToggle">
-    <span class="slider"></span>
-  </label>
-</div>
-
-    <div class="buttons">
-      <button id="saveBtn">Save Profile</button>
-    </div>
-
-    <p id="status"></p>
-  </div>
-
-  <script src="popup.js"></script>
-</body>
-</html>
+diff --git a/popup.html b/popup.html
+index d44cf30914733565bbd2716e990882256983a733..784806379767272fd2b9e6650551b276c569ad63 100644
+--- a/popup.html
++++ b/popup.html
+@@ -1,85 +1,109 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-  <meta charset="UTF-8" />
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Autofill Assistant</title>
+-  <link rel="stylesheet" href="popup.css" />
+-</head>
+-<body>
+-  <div class="container">
+-    <h1>Autofill Assistant</h1>
+-    
+-    <p class="info">Save your travel details below. The form will auto-fill automatically when you visit the website.</p>
+-
+-    <label>From Destination</label>
+-    <select id="fromDestination">
+-      <option value="">Select From</option>
+-      <option value="1001">Kochi</option>
+-      <option value="1002">Beypore</option>
+-      <option value="1003">Mangalore</option>
+-      <option value="1004">Androth</option>
+-      <option value="1005">Kalpeni</option>
+-      <option value="1006">Agatti</option>
+-      <option value="1007">Kavaratti</option>
+-      <option value="1008">Bangaram</option>
+-      <option value="1009">Minicoy</option>
+-      <option value="1010">Amini</option>
+-      <option value="1011">Kadmat</option>
+-      <option value="1012">Kiltan</option>
+-      <option value="1013">Chettlat</option>
+-      <option value="1014">Bitra</option>
+-    </select>
+-
+-    <label>To Destination</label>
+-    <select id="toDestination">
+-      <option value="">Select To</option>
+-      <option value="1001">Kochi</option>
+-      <option value="1002">Beypore</option>
+-      <option value="1003">Mangalore</option>
+-      <option value="1004">Androth</option>
+-      <option value="1005">Kalpeni</option>
+-      <option value="1006">Agatti</option>
+-      <option value="1007">Kavaratti</option>
+-      <option value="1008">Bangaram</option>
+-      <option value="1009">Minicoy</option>
+-      <option value="1010">Amini</option>
+-      <option value="1011">Kadmat</option>
+-      <option value="1012">Kiltan</option>
+-      <option value="1013">Chettlat</option>
+-      <option value="1014">Bitra</option>
+-    </select>
+-
+-    <label>Travel Class</label>
+-    <select id="travelClass">
+-      <option value="">Select Class</option>
+-      <option value="SECOND CLASS">SECOND CLASS</option>
+-      <option value="BUNK CLASS">BUNK CLASS</option>
+-      <option value="FIRST CLASS">FIRST CLASS</option>
+-    </select>
+-
+-    <label>Date</label>
+-    <input type="date" id="travelDate" />
+-
+-    <h3>Passengers</h3>
+-   <div id="passengerList"></div>
+-
+-<div class="seat-monitor-row">
+-  <span class="seat-label">Seat Monitor</span>
+-  
+-  <label class="switch">
+-    <input type="checkbox" id="seatMonitorToggle">
+-    <span class="slider"></span>
+-  </label>
+-</div>
+-
+-    <div class="buttons">
+-      <button id="saveBtn">Save Profile</button>
+-    </div>
+-
+-    <p id="status"></p>
+-  </div>
+-
+-  <script src="popup.js"></script>
+-</body>
+-</html>
+\ No newline at end of file
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Autofill Assistant</title>
++  <link rel="stylesheet" href="popup.css" />
++</head>
++<body>
++  <div class="container">
++    <h1>Autofill Assistant</h1>
++
++    <div id="authCard" class="auth-card">
++      <p class="info">Login is required to use this extension.</p>
++
++      <label>Email</label>
++      <input type="email" id="authEmail" placeholder="you@example.com" />
++
++      <label>Password</label>
++      <input type="password" id="authPassword" placeholder="••••••••" />
++
++      <div class="auth-buttons">
++        <button id="registerBtn" class="secondary-btn">Register</button>
++        <button id="loginBtn">Login</button>
++      </div>
++
++      <p class="hint">Tip: Change the server URL in <code>popupAuth.js</code> after deployment.</p>
++    </div>
++
++    <div id="appCard" class="app-card hidden">
++      <div class="top-row">
++        <span id="authUser" class="auth-user"></span>
++        <button id="logoutBtn" class="danger-btn">Logout</button>
++      </div>
++
++      <p class="info">Save your travel details below. The form will auto-fill automatically when you visit the website.</p>
++
++      <label>From Destination</label>
++      <select id="fromDestination">
++        <option value="">Select From</option>
++        <option value="1001">Kochi</option>
++        <option value="1002">Beypore</option>
++        <option value="1003">Mangalore</option>
++        <option value="1004">Androth</option>
++        <option value="1005">Kalpeni</option>
++        <option value="1006">Agatti</option>
++        <option value="1007">Kavaratti</option>
++        <option value="1008">Bangaram</option>
++        <option value="1009">Minicoy</option>
++        <option value="1010">Amini</option>
++        <option value="1011">Kadmat</option>
++        <option value="1012">Kiltan</option>
++        <option value="1013">Chettlat</option>
++        <option value="1014">Bitra</option>
++      </select>
++
++      <label>To Destination</label>
++      <select id="toDestination">
++        <option value="">Select To</option>
++        <option value="1001">Kochi</option>
++        <option value="1002">Beypore</option>
++        <option value="1003">Mangalore</option>
++        <option value="1004">Androth</option>
++        <option value="1005">Kalpeni</option>
++        <option value="1006">Agatti</option>
++        <option value="1007">Kavaratti</option>
++        <option value="1008">Bangaram</option>
++        <option value="1009">Minicoy</option>
++        <option value="1010">Amini</option>
++        <option value="1011">Kadmat</option>
++        <option value="1012">Kiltan</option>
++        <option value="1013">Chettlat</option>
++        <option value="1014">Bitra</option>
++      </select>
++
++      <label>Travel Class</label>
++      <select id="travelClass">
++        <option value="">Select Class</option>
++        <option value="SECOND CLASS">SECOND CLASS</option>
++        <option value="BUNK CLASS">BUNK CLASS</option>
++        <option value="FIRST CLASS">FIRST CLASS</option>
++      </select>
++
++      <label>Date</label>
++      <input type="date" id="travelDate" />
++
++      <h3>Passengers</h3>
++      <div id="passengerList"></div>
++
++      <div class="seat-monitor-row">
++        <span class="seat-label">Seat Monitor</span>
++
++        <label class="switch">
++          <input type="checkbox" id="seatMonitorToggle" />
++          <span class="slider"></span>
++        </label>
++      </div>
++
++      <div class="buttons">
++        <button id="saveBtn">Save Profile</button>
++      </div>
++    </div>
++
++    <p id="status"></p>
++  </div>
++
++  <script type="module" src="popup.js"></script>
++</body>
++</html>
