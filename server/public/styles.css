@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #f3f4f6;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: min(420px, 90vw);
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  display: grid;
+  gap: 10px;
+}
+
+input,
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  background: #16a34a;
+  color: #fff;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #334155;
+}
+
+button.ghost {
+  background: #2563eb;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+pre {
+  background: #111827;
+  color: #e5e7eb;
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 60px;
+  white-space: pre-wrap;
+}

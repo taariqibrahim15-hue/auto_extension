@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extension Auth Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Extension Auth Portal</h1>
+    <p>Register users and test login for your extension backend.</p>
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="you@example.com" />
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Minimum 6 characters" />
+
+    <div class="row">
+      <button id="registerBtn" class="secondary">Register</button>
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <button id="verifyBtn" class="ghost">Verify Current Token</button>
+
+    <pre id="output">Ready.</pre>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

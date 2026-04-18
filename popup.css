@@ -32,7 +32,8 @@ label {
   color: #555;
 }
 
-select, input {
+select,
+input {
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -41,9 +42,10 @@ select, input {
   box-sizing: border-box;
 }
 
-select:focus, input:focus {
+select:focus,
+input:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 .buttons {
@@ -51,7 +53,7 @@ select:focus, input:focus {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -74,7 +76,54 @@ button:hover {
   word-wrap: break-word;
 }
 
-/* Row layout */
+.hidden {
+  display: none;
+}
+
+.auth-buttons {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 8px;
+}
+
+.secondary-btn {
+  background: #374151;
+}
+
+.secondary-btn:hover {
+  background: #111827;
+}
+
+.danger-btn {
+  width: auto;
+  background: #ef4444;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.danger-btn:hover {
+  background: #dc2626;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-user {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.hint {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
 .seat-monitor-row {
   display: flex;
   align-items: center;
@@ -82,13 +131,11 @@ button:hover {
   margin-top: 10px;
 }
 
-/* Label text */
 .seat-label {
   font-size: 14px;
   font-weight: 500;
 }
 
-/* Switch container */
 .switch {
   position: relative;
   display: inline-block;
@@ -96,14 +143,12 @@ button:hover {
   height: 26px;
 }
 
-/* Hide default checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* Slider background */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -113,7 +158,6 @@ button:hover {
   border-radius: 34px;
 }
 
-/* Circle */
 .slider::before {
   content: "";
   position: absolute;
@@ -126,17 +170,14 @@ button:hover {
   border-radius: 50%;
 }
 
-/* ON state */
 .switch input:checked + .slider {
   background-color: #22c55e;
 }
 
-/* Move circle */
 .switch input:checked + .slider::before {
   transform: translateX(24px);
 }
 
-/* Optional: smooth hover */
 .switch:hover .slider {
-  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
